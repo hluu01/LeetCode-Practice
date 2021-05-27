@@ -1,1 +1,13 @@
-
+ def twoSum(self, nums: List[int], target: int) -> List[int]:
+        count = 0
+        while count< len(nums):
+    
+            for i in range(len(nums)):
+                if i == count:
+                    continue
+                    
+                elif (nums[i]+nums[count] == target):
+                    return [count,i]
+            count+=1
+            
+        return []
