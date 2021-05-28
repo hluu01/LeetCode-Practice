@@ -11,3 +11,24 @@
             count+=1
             
         return []
+        
+  def isValid(self, s: str) -> bool:
+        #paren = ['(',')',"[","]","{","}"]
+        lst = []
+        if len(s) %2 ==1:
+            return False
+        paren = {')':'(',"]":"[","}":"{"}
+        
+        for i in s:
+            lst.append(i)
+            
+            if i in paren.keys():
+                check = lst.pop()
+                try:
+                    if paren[check] != lst.pop():
+                        return False
+                except:
+                    return False
+        if len(lst) != 0:
+            return False
+        return True 
